@@ -1,0 +1,17 @@
+{
+  "name": "municipal-asset-management-system",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Comprehensive asset management system for South African municipalities to track, manage, and report on municipal assets with integrated support functionality and AI-powered assistance",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.0",
+    "better-sqlite3": "^9.4.0"
+  }
+}

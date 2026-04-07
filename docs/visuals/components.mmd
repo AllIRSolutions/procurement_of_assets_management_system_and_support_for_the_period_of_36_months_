@@ -1,0 +1,39 @@
+graph TB
+    subgraph "Presentation Layer"
+        React[React Frontend]
+        Tailwind[TailwindCSS Styling]
+        Chatbot[AI Chatbot Widget]
+    end
+    
+    subgraph "Application Layer"
+        Express[Express.js Server]
+        Routes[API Routes]
+        Middleware[Auth Middleware]
+        Validation[Input Validation]
+    end
+    
+    subgraph "Service Layer"
+        BusinessLogic[Business Logic]
+        AIService[AI Integration]
+        FileService[File Management]
+        NotifyService[Notifications]
+    end
+    
+    subgraph "Data Layer"
+        SQLite[(SQLite DB)]
+        FileStore[File Storage]
+        Cache[In-Memory Cache]
+    end
+    
+    React --> Express
+    Chatbot --> Express
+    Express --> Routes
+    Routes --> Middleware
+    Middleware --> BusinessLogic
+    BusinessLogic --> SQLite
+    AIService --> Claude[Claude API]
+    
+    style React fill:#61DAFB,color:#000
+    style Express fill:#68A063,color:#fff
+    style SQLite fill:#003B57,color:#fff
+    style Claude fill:#E91E63,color:#fff

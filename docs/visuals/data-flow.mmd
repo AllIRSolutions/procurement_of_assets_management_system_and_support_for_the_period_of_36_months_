@@ -1,0 +1,17 @@
+graph LR
+    User((User)) --> |Request| WebApp[Web Application]
+    WebApp --> |API Call| Server[Server]
+    Server --> |Query| Database[(Database)]
+    Database --> |Results| Server
+    Server --> |AI Request| Claude[Claude AI]
+    Claude --> |Response| Server
+    Server --> |Response| WebApp
+    WebApp --> |Display| User
+    
+    Admin((Admin)) --> |Manage| AdminPanel[Admin Panel]
+    AdminPanel --> Server
+    
+    style User fill:#4CAF50,color:#fff
+    style Admin fill:#FF9800,color:#fff
+    style Claude fill:#E91E63,color:#fff
+    style Database fill:#9C27B0,color:#fff

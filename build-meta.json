@@ -1,0 +1,230 @@
+{
+  "buildId": "build-et-152767-mno87h64ppmd",
+  "tenderId": "et-152767",
+  "tenderRef": "VDM/FIN/01/03/2026/01",
+  "name": "PROCUREMENT_OF_ASSETS_MANAGEMENT_SYSTEM_AND_SUPPORT_FOR_THE_PERIOD_OF_36_MONTHS_",
+  "architecture": {
+    "name": "municipal-asset-management-system",
+    "description": "Comprehensive asset management system for South African municipalities to track, manage, and report on municipal assets with integrated support functionality and AI-powered assistance",
+    "stack": {
+      "backend": "Node.js/Express with TypeScript",
+      "frontend": "React + TailwindCSS + Material-UI",
+      "database": "PostgreSQL with Redis caching",
+      "ai": "Claude API integration for asset insights and maintenance recommendations",
+      "reporting": "Chart.js + PDF generation",
+      "authentication": "JWT with role-based access control",
+      "file_storage": "AWS S3 compatible storage",
+      "deployment": "Docker containerization"
+    },
+    "modules": [
+      {
+        "name": "asset-registry",
+        "purpose": "Core asset registration, categorization and lifecycle management",
+        "files": [
+          "src/modules/assets/models/Asset.js",
+          "src/modules/assets/controllers/AssetController.js",
+          "src/modules/assets/services/AssetService.js",
+          "src/modules/assets/routes/assetRoutes.js"
+        ]
+      },
+      {
+        "name": "maintenance-management",
+        "purpose": "Preventive and corrective maintenance scheduling and tracking",
+        "files": [
+          "src/modules/maintenance/models/MaintenanceSchedule.js",
+          "src/modules/maintenance/controllers/MaintenanceController.js",
+          "src/modules/maintenance/services/MaintenanceService.js"
+        ]
+      },
+      {
+        "name": "financial-tracking",
+        "purpose": "Asset valuation, depreciation, and cost tracking",
+        "files": [
+          "src/modules/finance/models/AssetValuation.js",
+          "src/modules/finance/controllers/FinanceController.js",
+          "src/modules/finance/services/DepreciationService.js"
+        ]
+      },
+      {
+        "name": "reporting-analytics",
+        "purpose": "Generate compliance reports and asset analytics dashboards",
+        "files": [
+          "src/modules/reports/controllers/ReportController.js",
+          "src/modules/reports/services/ReportGenerator.js",
+          "src/modules/reports/templates/ComplianceReports.js"
+        ]
+      },
+      {
+        "name": "user-management",
+        "purpose": "Role-based access control and user administration",
+        "files": [
+          "src/modules/auth/models/User.js",
+          "src/modules/auth/controllers/AuthController.js",
+          "src/modules/auth/middleware/roleMiddleware.js"
+        ]
+      },
+      {
+        "name": "document-management",
+        "purpose": "Asset documentation, warranties, and file attachments",
+        "files": [
+          "src/modules/documents/models/Document.js",
+          "src/modules/documents/controllers/DocumentController.js",
+          "src/modules/documents/services/FileUploadService.js"
+        ]
+      },
+      {
+        "name": "notification-system",
+        "purpose": "Automated alerts for maintenance, compliance, and asset lifecycle events",
+        "files": [
+          "src/modules/notifications/models/Notification.js",
+          "src/modules/notifications/services/NotificationService.js",
+          "src/modules/notifications/controllers/NotificationController.js"
+        ]
+      },
+      {
+        "name": "audit-trail",
+        "purpose": "Track all asset-related transactions and changes for compliance",
+        "files": [
+          "src/modules/audit/models/AuditLog.js",
+          "src/modules/audit/services/AuditService.js",
+          "src/modules/audit/controllers/AuditController.js"
+        ]
+      }
+    ],
+    "apiEndpoints": [
+      {
+        "method": "GET",
+        "path": "/api/assets",
+        "description": "Retrieve paginated list of assets with filtering and search"
+      },
+      {
+        "method": "POST",
+        "path": "/api/assets",
+        "description": "Register new municipal asset"
+      },
+      {
+        "method": "PUT",
+        "path": "/api/assets/:id",
+        "description": "Update asset information and status"
+      },
+      {
+        "method": "DELETE",
+        "path": "/api/assets/:id",
+        "description": "Decommission or dispose of asset"
+      },
+      {
+        "method": "GET",
+        "path": "/api/maintenance/schedule",
+        "description": "Get maintenance schedules and overdue items"
+      },
+      {
+        "method": "POST",
+        "path": "/api/maintenance/work-order",
+        "description": "Create maintenance work order"
+      },
+      {
+        "method": "GET",
+        "path": "/api/reports/compliance/:type",
+        "description": "Generate compliance reports (MFMA, GRAP, etc.)"
+      },
+      {
+        "method": "GET",
+        "path": "/api/reports/financial-summary",
+        "description": "Generate financial asset reports and depreciation schedules"
+      },
+      {
+        "method": "POST",
+        "path": "/api/documents/upload",
+        "description": "Upload asset-related documents and attachments"
+      },
+      {
+        "method": "GET",
+        "path": "/api/analytics/dashboard",
+        "description": "Get asset analytics and KPI data for dashboard"
+      },
+      {
+        "method": "POST",
+        "path": "/api/auth/login",
+        "description": "User authentication and JWT token generation"
+      },
+      {
+        "method": "GET",
+        "path": "/api/notifications",
+        "description": "Get user notifications and system alerts"
+      }
+    ],
+    "features": [
+      "Asset lifecycle management (acquisition to disposal)",
+      "Barcode/QR code asset tagging and mobile scanning",
+      "Preventive and corrective maintenance scheduling",
+      "Financial tracking with depreciation calculations",
+      "MFMA and GRAP compliance reporting",
+      "Real-time asset location tracking with GPS integration",
+      "Document management with version control",
+      "Role-based access control for different municipal departments",
+      "Mobile application for field asset management",
+      "Integration with municipal financial systems",
+      "Automated maintenance alerts and notifications",
+      "Asset performance analytics and KPI dashboards",
+      "Bulk asset import/export functionality",
+      "Multi-language support (English, Afrikaans, Local languages)",
+      "Offline capability for field operations",
+      "Asset disposal and transfer workflows",
+      "Insurance tracking and claims management",
+      "Warranty management and tracking"
+    ],
+    "aiChatbot": {
+      "purpose": "Intelligent asset management assistant providing maintenance insights, compliance guidance, and operational support",
+      "capabilities": [
+        "Predictive maintenance recommendations based on asset history",
+        "MFMA compliance guidance and regulatory interpretation",
+        "Asset optimization suggestions and cost analysis",
+        "Natural language queries for asset information",
+        "Automated report generation assistance",
+        "Maintenance scheduling optimization",
+        "Asset lifecycle planning recommendations",
+        "Risk assessment and mitigation advice",
+        "Budget planning support for asset management",
+        "Training assistance for system users",
+        "Document search and information extraction",
+        "Performance benchmarking against municipal standards"
+      ]
+    },
+    "compliance": {
+      "frameworks": [
+        "MFMA (Municipal Finance Management Act)",
+        "GRAP (Generally Recognised Accounting Practice)",
+        "Municipal Asset Management Policy Framework"
+      ],
+      "reporting_standards": "South African municipal accounting standards",
+      "audit_requirements": "Full audit trail for all asset transactions"
+    },
+    "deployment": {
+      "architecture": "Microservices with Docker containers",
+      "hosting": "On-premise or cloud deployment options",
+      "scalability": "Horizontal scaling for multiple municipalities",
+      "backup": "Automated daily backups with disaster recovery",
+      "security": "End-to-end encryption, role-based access, audit logging"
+    },
+    "support": {
+      "duration": "36 months comprehensive support",
+      "training": "User training programs and documentation",
+      "maintenance": "System updates, bug fixes, and feature enhancements",
+      "helpdesk": "24/7 technical support portal"
+    }
+  },
+  "files": [
+    "package.json",
+    "src/server.js",
+    "public/index.html",
+    "src/chatbot.js",
+    "src/database.js"
+  ],
+  "similarProjects": [
+    "Rastaman4e/-1",
+    "gnanasekar6914/Overview-of-JIRA-Benefits"
+  ],
+  "builtAt": "2026-04-07T06:18:15.131Z",
+  "status": "complete",
+  "buildDir": "/home/kabelo/tender-engine/data/builds/build-et-152767-mno87h64ppmd"
+}
